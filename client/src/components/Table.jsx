@@ -4,17 +4,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import Swal from "sweetalert2";
 import { Table, TableBody, TableCell, TableHead, TableHeadCell, TableRow } from "flowbite-react";
 
-const TableC = () => {
-    const [enquiry, setEnquiry] = useState([]);
-
-    const getdata = async () => {
-        let res = await axios.get('http://localhost:8000/api/get')
-        console.log(res.data)
-        if (res.data.status === "success") {
-            setEnquiry(res.data.data);
-        }
-    };
-
+const TableC = ({enquiry, getdata}) => {
+     
     const deldata = async (id) => {
         Swal.fire({
             title: "Are you sure?",

@@ -45,8 +45,8 @@ let s_update = async (req, res) => {
 export { s_insert, s_get, s_del, delall, s_update };
 
 // {
-//     "name": "test", 
 //     "reg_no": 123456,
+//     "name": "test", 
 //     "email": "abc@gmail.com",
 //     "phone": 1234567890,
 //     "message": "This is a test message"

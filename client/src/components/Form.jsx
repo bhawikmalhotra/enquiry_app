@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Button, Checkbox, Label, Textarea, TextInput } from "flowbite-react";
 import { ToastContainer, toast } from 'react-toastify';
 
-const Formcom = () => {
+const Formcom = ({getdata}) => {
 
     const [formData, setformData] = useState({
         name: '',
@@ -24,17 +24,14 @@ const Formcom = () => {
                 phone: '',
                 message: ''
             })
+            toast.success("Enquiry submitted successfully!",);
+            getdata();
         })
-        toast.success("Enquiry submitted successfully!",);
     }; 
 
-    let getvalue = (e) => {
-        let inputName = e.target.name;
-        let inputValue = e.target.value;
-        let oldData = { ...formData };
-        oldData[inputName] = inputValue;
-        setformData(oldData);
-    }
+  let getvalue = (e) => {
+    setformData({ ...formData, [e.target.name]: e.target.value });
+  };
     
     return (
         <div>
